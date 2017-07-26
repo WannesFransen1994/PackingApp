@@ -2,32 +2,92 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp">
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+
+
+    <!--
+    invisible "splitter" centershim divides screen in two vertically
+    alignparentleft -> aligns left edge of view with left edge of parent
+    toleftof shim -> puts it on the left side of the "splitter"
+     -->
+    <View
+        android:id="@+id/centerShim"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"/>
 
     <Button
-        android:id="@+id/whatsitfor"
+        android:id="@+id/ButtonWhatsitfor"
+        android:text="What is this app for?"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Button
+        android:id="@+id/ButtonServerContact"
+        android:text="Contact server"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
-        android:text="What is this app for?" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/whatsitfor"
-        android:text="Contact server" />
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/centerShim"
+        android:layout_below="@+id/ButtonWhatsitfor" />
 
     <TextView
+        android:id="@+id/ContactLabel"
+        android:text="Last contacted: N/A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/centerShim"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/whatsitfor"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_below="@+id/ButtonWhatsitfor"
+        android:layout_margin="20dp"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/ButtonQuickCalc"
+        android:text="Quick calculation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ButtonServerContact"
         android:layout_marginTop="15dp"
-        android:text="Last contacted: N/A" />
+        android:layout_toLeftOf="@+id/centerShim"/>
+
+    <Button
+        android:id="@+id/ButtonSchematicView"
+        android:text="Complete Calculation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ButtonQuickCalc"
+        android:layout_below="@+id/ButtonServerContact"
+        android:layout_marginTop="15dp" />
+    <TextView
+        android:id="@+id/LabelQuickCalc"
+        android:text="Shows concise the # of boxes that are necessary."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ButtonQuickCalc"
+        android:layout_toLeftOf="@+id/centerShim"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:text="Shows the # of boxes + placement view."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ButtonQuickCalc"
+        android:layout_toRightOf="@+id/centerShim"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <Button
+        android:text="Load saved configuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LabelQuickCalc"
+        android:layout_marginTop="50dp"/>
 </RelativeLayout>
