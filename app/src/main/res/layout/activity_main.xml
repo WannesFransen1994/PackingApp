@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         />
     <Button
-        android:id="@+id/ButtonServerContact"
+        android:id="@+id/ButtonContactServer"
         android:text="Contact server"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
         android:layout_below="@+id/ButtonWhatsitfor" />
 
     <TextView
-        android:id="@+id/ContactLabel"
+        android:id="@+id/LabelContact"
         android:text="Last contacted: N/A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,28 +48,28 @@
         android:layout_marginTop="15dp" />
 
     <Button
-        android:id="@+id/ButtonQuickCalc"
-        android:text="Quick calculation"
+        android:id="@+id/ButtonQuickView"
+        android:text="Quick View"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ButtonServerContact"
+        android:layout_below="@+id/ButtonContactServer"
         android:layout_marginTop="15dp"
         android:layout_toLeftOf="@+id/centerShim"/>
 
     <Button
-        android:id="@+id/ButtonSchematicView"
-        android:text="Complete Calculation"
+        android:id="@+id/ButtonCompleteView"
+        android:text="Complete View"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/ButtonQuickCalc"
-        android:layout_below="@+id/ButtonServerContact"
+        android:layout_toRightOf="@+id/ButtonQuickView"
+        android:layout_below="@+id/ButtonContactServer"
         android:layout_marginTop="15dp" />
     <TextView
-        android:id="@+id/LabelQuickCalc"
+        android:id="@+id/LabelQuickView"
         android:text="Shows concise the # of boxes that are necessary."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ButtonQuickCalc"
+        android:layout_below="@id/ButtonQuickView"
         android:layout_toLeftOf="@+id/centerShim"
         android:layout_alignParentLeft="true"
         android:layout_marginRight="10dp"
@@ -79,15 +79,16 @@
         android:text="Shows the # of boxes + placement view."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ButtonQuickCalc"
+        android:layout_below="@id/ButtonQuickView"
         android:layout_toRightOf="@+id/centerShim"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
 
     <Button
+        android:id="@+id/ButtonLoadConfig"
         android:text="Load saved configuration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/LabelQuickCalc"
+        android:layout_below="@+id/LabelQuickView"
         android:layout_marginTop="50dp"/>
 </RelativeLayout>
