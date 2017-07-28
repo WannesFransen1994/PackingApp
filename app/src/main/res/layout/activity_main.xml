@@ -21,14 +21,14 @@
 
     <Button
         android:id="@+id/ButtonWhatsitfor"
-        android:text="What is this app for?"
+        android:text="@string/button_whats_it_for"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
     <Button
         android:id="@+id/ButtonContactServer"
-        android:text="Contact server"
+        android:text="@string/button_contact_server"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -37,7 +37,7 @@
 
     <TextView
         android:id="@+id/LabelContact"
-        android:text="Last contacted: N/A"
+        android:text="@string/label_last_contacted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/centerShim"
@@ -49,7 +49,7 @@
 
     <Button
         android:id="@+id/ButtonQuickView"
-        android:text="Quick View"
+        android:text="@string/button_quick_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ButtonContactServer"
@@ -58,7 +58,7 @@
 
     <Button
         android:id="@+id/ButtonCompleteView"
-        android:text="Complete View"
+        android:text="@string/button_complete_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/ButtonQuickView"
@@ -66,7 +66,7 @@
         android:layout_marginTop="15dp" />
     <TextView
         android:id="@+id/LabelQuickView"
-        android:text="Shows concise the # of boxes that are necessary."
+        android:text="@string/label_quick_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ButtonQuickView"
@@ -76,7 +76,7 @@
         android:layout_marginLeft="10dp"/>
 
     <TextView
-        android:text="Shows the # of boxes + placement view."
+        android:text="@string/label_complete_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ButtonQuickView"
@@ -86,7 +86,7 @@
 
     <Button
         android:id="@+id/ButtonLoadConfig"
-        android:text="Load saved configuration"
+        android:text="@string/button_load_config"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LabelQuickView"

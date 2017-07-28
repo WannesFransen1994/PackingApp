@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">3D bin packing - Android App</string>
+    <string name="button_whats_it_for">What is this app for?</string>
+    <string name="button_quick_view">Quick view</string>
+    <string name="button_complete_view">Complete view</string>
+    <string name="label_quick_view">Shows concise the # of boxes that are necessary.</string>
+    <string name="label_complete_view">Shows the # of boxes + placement view.</string>
+    <string name="button_load_config">Load saved configuration</string>
+    <string name="label_last_contacted">Last contacted: N/A</string>
+    <string name="button_contact_server">Contact server</string>
+</resources>

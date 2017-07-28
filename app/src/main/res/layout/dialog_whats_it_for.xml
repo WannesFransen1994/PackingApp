@@ -5,12 +5,12 @@
 
     <TextView
         android:id="@+id/LabelWhatsItFor"
-        android:text="test"
+        android:text="@string/label_1_whats_it_for"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/ButtonGotIt"
-        android:text="Got it!"
+        android:text="@string/button_got_it"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LabelWhatsItFor"/>
