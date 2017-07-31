@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+    invisible "splitter" centershim divides screen in two vertically
+    alignparentleft -> aligns left edge of view with left edge of parent
+    toleftof shim -> puts it on the left side of the "splitter"
+     -->
+    <View
+        android:id="@+id/centerShim"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/ButtonContactServer"
+        android:text="@string/button_contact_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/centerShim"/>
+    <TextView
+        android:id="@+id/LabelContact"
+        android:text="@string/label_last_contacted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/centerShim"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ButtonWhatsitfor"
+        android:layout_margin="15dp"
+        android:layout_marginTop="10dp" />
+
+
+</RelativeLayout>

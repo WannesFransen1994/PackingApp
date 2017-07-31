@@ -26,33 +26,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
-    <Button
-        android:id="@+id/ButtonContactServer"
-        android:text="@string/button_contact_server"
+    <fragment
+        android:id="@+id/fragment_contact_server"
+        android:name="bin.wannes.packing.Fragment_contact_server"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/centerShim"
         android:layout_below="@+id/ButtonWhatsitfor" />
 
-    <TextView
-        android:id="@+id/LabelContact"
-        android:text="@string/label_last_contacted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/centerShim"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/ButtonWhatsitfor"
-        android:layout_margin="15dp"
-        android:layout_marginTop="10dp" />
+
 
     <Button
         android:id="@+id/ButtonQuickView"
         android:text="@string/button_quick_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ButtonContactServer"
+        android:layout_centerVertical="true"
         android:layout_marginTop="15dp"
         android:layout_toLeftOf="@+id/centerShim"/>
 
@@ -62,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/ButtonQuickView"
-        android:layout_below="@+id/ButtonContactServer"
+        android:layout_centerVertical="true"
         android:layout_marginTop="15dp" />
     <TextView
         android:id="@+id/LabelQuickView"
@@ -89,6 +77,6 @@
         android:text="@string/button_load_config"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/LabelQuickView"
-        android:layout_marginTop="50dp"/>
+        android:layout_alignParentBottom="true"
+        />
 </RelativeLayout>
