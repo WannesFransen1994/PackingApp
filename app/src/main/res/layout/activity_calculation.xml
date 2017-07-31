@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="bin.wannes.packing.CalculationActivity">
+
+
+    <!--
+    invisible "splitter" centershim divides screen in two vertically
+    alignparentleft -> aligns left edge of view with left edge of parent
+    toleftof shim -> puts it on the left side of the "splitter"
+     -->
+    <View
+        android:id="@+id/centerShim"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"/>
+
+    <fragment
+        android:id="@+id/fragment_box_form"
+        android:name="bin.wannes.packing.Fragment_Calculation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ButtonQuickView"
+        />
+
+
+    <Button
+        android:id="@+id/ButtonQuickView"
+        android:text="@string/button_quick_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/centerShim"/>
+
+    <Button
+        android:id="@+id/ButtonCompleteView"
+        android:text="@string/button_complete_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/centerShim"
+        android:layout_alignParentBottom="true" />
+    <TextView
+        android:id="@+id/LabelQuickView"
+        android:text="@string/label_quick_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ButtonQuickView"
+        android:layout_toLeftOf="@+id/centerShim"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:text="@string/label_complete_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ButtonQuickView"
+        android:layout_toRightOf="@+id/centerShim"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+
+</RelativeLayout>

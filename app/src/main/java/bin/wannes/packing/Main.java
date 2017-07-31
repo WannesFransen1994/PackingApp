@@ -1,25 +1,16 @@
 package bin.wannes.packing;
 
 import android.app.AlertDialog;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.client.RestTemplate;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class Main extends AppCompatActivity {
     Button whatsItFor;
-    Button quickView;
-    Button completeView;
+    Button calculation;
     Button loadConfig;
 
     @Override
@@ -33,8 +24,7 @@ public class Main extends AppCompatActivity {
 
     private void initialize() {
         whatsItFor = (Button) findViewById(R.id.ButtonWhatsitfor);
-        quickView = (Button) findViewById(R.id.ButtonQuickView);
-        completeView = (Button) findViewById(R.id.ButtonCompleteView);
+        calculation = (Button) findViewById(R.id.ButtonCalculate);
         loadConfig = (Button) findViewById(R.id.ButtonLoadConfig);
 
     }
@@ -56,14 +46,9 @@ public class Main extends AppCompatActivity {
                 dialog.show();
             }
         });
-        quickView.setOnClickListener(new View.OnClickListener() {
+        calculation.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                //TODO: Write code
-            }
-        });
-        completeView.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                //TODO: Write code
+                startActivity(new Intent(getApplicationContext(),CalculationActivity.class));
             }
         });
         loadConfig.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +57,5 @@ public class Main extends AppCompatActivity {
             }
         });
     }
-
 
 }

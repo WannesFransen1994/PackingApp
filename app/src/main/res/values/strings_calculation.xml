@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_box1">Box 1</string>
+    <string name="label_box2">Box 2</string>
+    <string name="Height">Height</string>
+    <string name="Width">Width</string>
+    <string name="Length">Length</string>
+    <string name="label_Column">Column</string>
+    <string name="Pockets">Pockets</string>
+    <string name="Amount">Amount</string>
+</resources>
