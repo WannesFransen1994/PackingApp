@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class Main extends AppCompatActivity {
+public class ActivityMain extends AppCompatActivity {
     Button whatsItFor;
     Button calculation;
     Button loadConfig;
@@ -32,8 +32,8 @@ public class Main extends AppCompatActivity {
     private void initializeOnClickListeners() {
         whatsItFor.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(Main.this);
-                View dialogView = getLayoutInflater().inflate(R.layout.dialog_whats_it_for,null);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ActivityMain.this);
+                View dialogView = getLayoutInflater().inflate(R.layout.dialog_whats_it_for, null);
                 Button gotIt = dialogView.findViewById(R.id.ButtonGotIt);
                 builder.setView(dialogView);
                 final AlertDialog dialog = builder.create();
@@ -48,7 +48,7 @@ public class Main extends AppCompatActivity {
         });
         calculation.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),CalculationActivity.class));
+                startActivity(new Intent(getApplicationContext(), ActivityCalculation.class));
             }
         });
         loadConfig.setOnClickListener(new View.OnClickListener() {

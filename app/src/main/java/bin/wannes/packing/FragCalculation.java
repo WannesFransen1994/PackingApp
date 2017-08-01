@@ -11,7 +11,7 @@ import android.widget.EditText;
  * Created by wannes on 31/07/2017.
  */
 
-public class Fragment_Calculation extends Fragment implements View.OnClickListener{
+public class FragCalculation extends Fragment implements View.OnClickListener{
     View v;
     EditText box1Height;
     EditText box1Width;

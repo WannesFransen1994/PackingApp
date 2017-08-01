@@ -3,11 +3,11 @@ package bin.wannes.packing;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CalculationActivity extends AppCompatActivity {
+public class ActivityQuickView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculation);
+        setContentView(R.layout.activity_quick_view);
     }
 }

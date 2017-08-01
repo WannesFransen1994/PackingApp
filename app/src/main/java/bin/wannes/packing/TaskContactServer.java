@@ -4,6 +4,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,37 +16,37 @@ import java.util.Date;
  * Created by wannes on 31/07/2017.
  */
 
-public class ContactServerTask extends AsyncTask {
+public class TaskContactServer extends AsyncTask {
     final String url = "https://bin-packing-3d-rest.herokuapp.com";
     final RestTemplate restTemplate = new RestTemplate();
     TextView labelContactServer;
 
-    public ContactServerTask(TextView labelContactServer) {
+    public TaskContactServer(TextView labelContactServer) {
         this.labelContactServer = labelContactServer;
     }
 
     @Override
     protected Object doInBackground(Object[] objects) {
-        String s;
+        ResponseEntity<String> response;
         try {
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            s = restTemplate.getForObject(url, String.class);
+            //restTemplate.exchange()
+            //s = restTemplate.getForObject(url, String.class);
+            response = restTemplate.getForEntity(url,String.class);
         } catch (Exception e){
             Log.e("MainActivity", e.getMessage(), e);
-            s = "";
+            response = null;
         }
-        return s;
+        return response;
     }
 
     @Override
     protected void onPostExecute(Object o) {
-        if (o instanceof String){
-            if (((String) o).length()>0){
+        if (o instanceof ResponseEntity){
+            if (((ResponseEntity) o).getStatusCode().value() == 200){
                 SimpleDateFormat sd = new SimpleDateFormat("hh:mm:ss");
                 labelContactServer.setText("Last online @ " + sd.format(new Date()));
-            } else {
-                labelContactServer.setText("Not online");
             }
-        }
+        }else if (o == null)  labelContactServer.setText("Not online");
     }
 }

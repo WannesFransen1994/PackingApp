@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bin.wannes.packing.CalculationActivity">
+    tools:context="bin.wannes.packing.ActivityCalculation">
 
 
     <!--
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/fragment_box_form"
-        android:name="bin.wannes.packing.Fragment_Calculation"
+        android:name="bin.wannes.packing.FragCalculation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/ButtonQuickView"

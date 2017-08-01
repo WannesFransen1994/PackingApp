@@ -12,7 +12,7 @@ import android.widget.TextView;
  * Created by wannes on 31/07/2017.
  */
 
-public class Fragment_contact_server extends Fragment implements View.OnClickListener{
+public class FragContactServer extends Fragment implements View.OnClickListener{
     TextView labelContactServer;
     Button buttonContactServer;
     @Override
@@ -28,6 +28,6 @@ public class Fragment_contact_server extends Fragment implements View.OnClickLis
     @Override
     public void onClick(View view) {
         labelContactServer.setText("Contacting");
-        new ContactServerTask(labelContactServer).execute();
+        new TaskContactServer(labelContactServer).execute();
     }
 }
