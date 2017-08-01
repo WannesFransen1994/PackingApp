@@ -9,5 +9,7 @@ public class ActivityQuickView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quick_view);
+
+        new TaskCalculateServer().execute("");
     }
 }
