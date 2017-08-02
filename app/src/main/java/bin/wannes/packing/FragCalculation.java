@@ -7,11 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by wannes on 31/07/2017.
  */
 
-public class FragCalculation extends Fragment implements View.OnClickListener{
+public class FragCalculation extends Fragment{
     View v;
     EditText box1Height;
     EditText box1Width;
@@ -57,7 +60,20 @@ public class FragCalculation extends Fragment implements View.OnClickListener{
         columnpockets.setMaxWidth(columnpockets.getWidth());
     }
 
-    @Override
-    public void onClick(View view) {
-        }
+    public Map<String,Integer> getFieldData(){
+        Map<String,Integer> hashmap = new HashMap<>();
+        hashmap.put("box1Length",Integer.parseInt(box1Length.getText().toString()));
+        hashmap.put("box1Width",Integer.parseInt(box1Width.getText().toString()));
+        hashmap.put("box1Height",Integer.parseInt(box1Height.getText().toString()));
+        hashmap.put("box2length",Integer.parseInt(box2Length.getText().toString()));
+        hashmap.put("box2Width",Integer.parseInt(box2Width.getText().toString()));
+        hashmap.put("box2Height",Integer.parseInt(box2Height.getText().toString()));
+        hashmap.put("columnLength",Integer.parseInt(columnLength.getText().toString()));
+        hashmap.put("columnWidth",Integer.parseInt(columnWidth.getText().toString()));
+        hashmap.put("columnHeight",Integer.parseInt(columnHeight.getText().toString()));
+        hashmap.put("columnPockets",Integer.parseInt(columnpockets.getText().toString()));
+        hashmap.put("columnAmount",Integer.parseInt(columnAmount.getText().toString()));
+
+        return hashmap;
+    }
 }

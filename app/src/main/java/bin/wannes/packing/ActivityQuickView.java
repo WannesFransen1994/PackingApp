@@ -1,15 +1,13 @@
 package bin.wannes.packing;
 
+import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class ActivityQuickView extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quick_view);
-
-        new TaskCalculateServer().execute("");
     }
 }

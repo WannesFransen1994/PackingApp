@@ -21,7 +21,7 @@
         android:layout_centerHorizontal="true"/>
 
     <fragment
-        android:id="@+id/fragment_box_form"
+        android:id="@+id/FragmentCalculation"
         android:name="bin.wannes.packing.FragCalculation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
