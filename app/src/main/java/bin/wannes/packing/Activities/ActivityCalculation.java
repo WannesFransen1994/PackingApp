@@ -1,14 +1,18 @@
-package bin.wannes.packing;
+package bin.wannes.packing.Activities;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Map;
+
+import bin.wannes.packing.Fragments.FragCalculation;
+import bin.wannes.packing.R;
+
 public class ActivityCalculation extends AppCompatActivity {
-    Button buttonQuickView;
+    Button buttonCalculate;
     Button buttonCompleteView;
     FragCalculation fragmentCalculation;
 
@@ -25,25 +29,17 @@ public class ActivityCalculation extends AppCompatActivity {
     }
 
     private void initialize(){
-        buttonQuickView = (Button) findViewById(R.id.ButtonQuickView);
-        buttonCompleteView = (Button) findViewById(R.id.ButtonCompleteView);
+        buttonCalculate = (Button) findViewById(R.id.ButtonCalculate);
     }
 
     private void initializeOnClickListeners(){
-        buttonQuickView.setOnClickListener(new View.OnClickListener() {
+        buttonCalculate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent nextActivity = new Intent(getApplicationContext(),ActivityQuickView.class);
-                for (String key: fragmentCalculation.getFieldData().keySet()) {
-                    //TODO: implement this
+                Intent nextActivity = new Intent(getApplicationContext(),ActivityViewResults.class);
+                Map<String,Integer> boxFormData = fragmentCalculation.getFieldData();
+                for (String key: boxFormData.keySet()) {
+                       nextActivity.putExtra(key,boxFormData.get(key));
                 }
-                //nextActivity.putExtra("id",5);
-                startActivity(nextActivity);
-            }
-        });
-        buttonCompleteView.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent nextActivity = new Intent(getApplicationContext(),ActivityCompleteView.class);
-                //nextActivity.putExtra("id",5);
                 startActivity(nextActivity);
             }
         });

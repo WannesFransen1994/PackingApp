@@ -18,9 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityCalculation" />
-        <activity android:name=".ActivityQuickView" />
-        <activity android:name=".ActivityCompleteView"></activity>
+        <activity android:name=".Activities.ActivityCalculation" />
+        <activity android:name=".Activities.ActivityViewResults" />
     </application>
 
 </manifest>

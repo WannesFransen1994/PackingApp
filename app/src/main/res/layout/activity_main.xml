@@ -14,7 +14,7 @@
         />
     <fragment
         android:id="@+id/fragment_contact_server"
-        android:name="bin.wannes.packing.FragContactServer"
+        android:name="bin.wannes.packing.Fragments.FragContactServer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ButtonWhatsitfor" />

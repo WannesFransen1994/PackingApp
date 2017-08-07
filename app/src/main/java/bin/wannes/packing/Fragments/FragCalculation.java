@@ -1,4 +1,4 @@
-package bin.wannes.packing;
+package bin.wannes.packing.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import bin.wannes.packing.R;
 
 /**
  * Created by wannes on 31/07/2017.
@@ -65,7 +67,7 @@ public class FragCalculation extends Fragment{
         hashmap.put("box1Length",Integer.parseInt(box1Length.getText().toString()));
         hashmap.put("box1Width",Integer.parseInt(box1Width.getText().toString()));
         hashmap.put("box1Height",Integer.parseInt(box1Height.getText().toString()));
-        hashmap.put("box2length",Integer.parseInt(box2Length.getText().toString()));
+        hashmap.put("box2Length",Integer.parseInt(box2Length.getText().toString()));
         hashmap.put("box2Width",Integer.parseInt(box2Width.getText().toString()));
         hashmap.put("box2Height",Integer.parseInt(box2Height.getText().toString()));
         hashmap.put("columnLength",Integer.parseInt(columnLength.getText().toString()));

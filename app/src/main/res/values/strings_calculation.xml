@@ -8,4 +8,5 @@
     <string name="label_Column">Column</string>
     <string name="Pockets">Pockets</string>
     <string name="Amount">Amount</string>
+    <string name="button_calculate">Calculate!</string>
 </resources>
