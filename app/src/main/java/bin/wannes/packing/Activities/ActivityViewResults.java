@@ -2,8 +2,10 @@ package bin.wannes.packing.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
+import bin.wannes.packing.Fragments.FragResultBoxList;
 import bin.wannes.packing.R;
 import bin.wannes.packing.Tasks.TaskCalculateServer;
 
@@ -15,7 +17,13 @@ public class ActivityViewResults extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_results);
 
-        int box1Length, box1Width, box1Height, box2Length, box2Width, box2Height, columnLength, columnWidth, columnHeight, columnAmount, columnPockets;
+        labelResult = (TextView) findViewById(R.id.LabelResultPlaceholder);
+        labelResult.setVisibility(View.VISIBLE);
+
+        int box1Length, box1Width, box1Height,
+                box2Length, box2Width, box2Height,
+                columnLength, columnWidth, columnHeight, columnAmount, columnPockets;
+
         Bundle extras = getIntent().getExtras();
         box1Length = extras.getInt("box1Length");
         box1Width = extras.getInt("box1Width");
@@ -29,8 +37,11 @@ public class ActivityViewResults extends AppCompatActivity {
         columnAmount = extras.getInt("columnAmount");
         columnPockets = extras.getInt("columnPockets");
 
-        labelResult = (TextView) findViewById(R.id.LabelResultPlaceholder);
-        new TaskCalculateServer(labelResult).execute(box1Length, box1Width, box1Height, box2Length, box2Width, box2Height, columnLength, columnWidth, columnHeight, columnAmount, columnPockets);
+        new TaskCalculateServer(labelResult, (FragResultBoxList)
+                getFragmentManager().findFragmentById(R.id.FragmentResultBoxList)).execute(
+                box1Length, box1Width, box1Height,
+                box2Length, box2Width, box2Height,
+                columnLength, columnWidth, columnHeight, columnAmount, columnPockets);
     }
 
 }
