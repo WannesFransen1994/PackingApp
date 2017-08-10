@@ -12,6 +12,7 @@ import bin.wannes.packing.Tasks.TaskCalculateServer;
 public class ActivityViewResults extends AppCompatActivity {
     TextView labelResult;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

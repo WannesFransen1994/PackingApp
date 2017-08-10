@@ -39,6 +39,8 @@ public class TaskCalculateServer extends AsyncTask<Integer, Void, BoxSetup> {
         for (Box box:boxSetup.getBoxAmount().keySet()) {
             fragResultBoxList.addToListResultBox(box,boxSetup.getBoxAmount().get(box));
         }
+
+        fragResultBoxList.updateAdapter();
     }
 
     @Override
