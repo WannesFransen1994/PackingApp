@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import bin.wannes.packing.Activities.ActivityCalculation;
+import bin.wannes.packing.Activities.ActivityLoadConfiguration;
 
 
 public class ActivityMain extends AppCompatActivity {
@@ -55,7 +56,7 @@ public class ActivityMain extends AppCompatActivity {
         });
         loadConfig.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                //TODO: Write code
+                startActivity(new Intent(getApplicationContext(), ActivityLoadConfiguration.class));
             }
         });
     }

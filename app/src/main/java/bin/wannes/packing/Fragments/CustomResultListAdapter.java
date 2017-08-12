@@ -41,6 +41,7 @@ public class CustomResultListAdapter extends ArrayAdapter<WrapperObjectBox> impl
     public void onClick(View view) {
         WrapperObjectBox box = (WrapperObjectBox) getItem((Integer) view.getTag());
         // TODO: context.startActivity();
+        System.out.println(box);
     }
 
     @NonNull
@@ -49,28 +50,25 @@ public class CustomResultListAdapter extends ArrayAdapter<WrapperObjectBox> impl
         WrapperObjectBox box = getItem(position);
         final ViewHolder viewHolder;
 
-        if (convertView == null) {
-            viewHolder = new ViewHolder();
-            LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.result_row_item, parent, false);
-            viewHolder.labelBoxResultSize = (TextView) convertView.findViewById(R.id.LabelBoxResultSize);
-            viewHolder.labelBoxResultAmount = (TextView) convertView.findViewById(R.id.LabelBoxResultAmount);
-            viewHolder.labelBoxResultColumnPairs = (TextView) convertView.findViewById(R.id.LabelBoxResultColumnPairs);
-            viewHolder.labelBoxResultVolumeUtilisation = (TextView) convertView.findViewById(R.id.LabelBoxResultVolumeUtilisation);
-            convertView.setTag(viewHolder);
-        } else {
-            viewHolder = (ViewHolder) convertView.getTag();
-        }
-        viewHolder.labelBoxResultSize.setText("Box "+box.getBox().getLength() + " * " + box.getBox().getWidth() + " * " + box.getBox().getHeight());
-        viewHolder.labelBoxResultAmount.setText("# of boxes: "+box.getAmount());
-        viewHolder.labelBoxResultColumnPairs.setText(box.getBox().getAmountOfItems() + "Pairs / " + box.getBox().getAmountOfItems()*2 + "columns");
+
+        viewHolder = new ViewHolder();
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        convertView = inflater.inflate(R.layout.result_row_item, parent, false);
+        viewHolder.labelBoxResultSize = (TextView) convertView.findViewById(R.id.LabelBoxResultSize);
+        viewHolder.labelBoxResultAmount = (TextView) convertView.findViewById(R.id.LabelBoxResultAmount);
+        viewHolder.labelBoxResultColumnPairs = (TextView) convertView.findViewById(R.id.LabelBoxResultColumnPairs);
+        viewHolder.labelBoxResultVolumeUtilisation = (TextView) convertView.findViewById(R.id.LabelBoxResultVolumeUtilisation);
+        convertView.setTag(viewHolder);
+        viewHolder.labelBoxResultSize.setText("Box " + box.getBox().getLength() + " * " + box.getBox().getWidth() + " * " + box.getBox().getHeight());
+        viewHolder.labelBoxResultAmount.setText("# of boxes: " + box.getAmount());
+        viewHolder.labelBoxResultColumnPairs.setText(box.getBox().getAmountOfItems() + "Pairs / " + box.getBox().getAmountOfItems() * 2 + "columns");
         Collection<Column> items = box.getBox().getItems().values();
         List list = new ArrayList(items);
         Column temp = (Column) list.get(0);
-        double used = temp.getHeight()*temp.getWidth()*temp.getLength()*box.getBox().getAmountOfItems();
+        double used = temp.getHeight() * temp.getWidth() * temp.getLength() * box.getBox().getAmountOfItems();
         double volume = box.getBox().getVolume();
-        double utilization = used/volume;
-        viewHolder.labelBoxResultVolumeUtilisation.setText(Math.round(utilization*100) + "% Utilized");
+        double utilization = used / volume;
+        viewHolder.labelBoxResultVolumeUtilisation.setText(Math.round(utilization * 100) + "% Utilized");
         convertView.setOnClickListener(this);
         convertView.setTag(position);
         return convertView;

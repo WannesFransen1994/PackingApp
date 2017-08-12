@@ -6,17 +6,17 @@
 
     <EditText
         android:id="@+id/EditTextNameResult"
-        android:text="@string/editText_name_result"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="@string/editText_name_result" />
 
     <Button
         android:id="@+id/ButtonSaveResultConfirm"
-        android:text="@string/button_save_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/EditTextNameResult"/>
+        android:layout_below="@+id/EditTextNameResult"
+        android:text="@string/button_save_result" />
 
 </RelativeLayout>
