@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".Activities.ActivityCalculation" />
         <activity android:name=".Activities.ActivityViewResults" />
+        <activity android:name=".Activities.ActivityLoadConfiguration"></activity>
     </application>
 
 </manifest>

@@ -1,31 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
     <TextView
         android:id="@+id/LabelBoxResultSize"
-        android:text="Box *** X *** X ***"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Box *** X *** X ***"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:layout_marginTop="5dp"/>
+
     <TextView
         android:id="@+id/LabelBoxResultAmount"
-        android:text="** Boxes necessary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:text="** Boxes necessary"
+        android:layout_marginTop="5dp"/>
+
     <TextView
         android:id="@+id/LabelBoxResultColumnPairs"
-        android:text="Contains ** pairs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/LabelBoxResultSize"/>
-    <TextView
-        android:id="@+id/LabelBoxResultVolumeUtilisation"
-        android:text="**% Filled"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LabelBoxResultSize"
-        android:layout_alignParentRight="true"/>
+        android:text="Contains ** pairs"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/LabelBoxResultVolumeUtilisation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/LabelBoxResultSize"
+        android:text="**% Filled"
+        android:layout_marginBottom="5dp"/>
 
 </RelativeLayout>

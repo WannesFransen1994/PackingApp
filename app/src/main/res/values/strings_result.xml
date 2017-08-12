@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_save_result">Save Result</string>
+    <string name="editText_name_result">Name Setup</string>
+</resources>

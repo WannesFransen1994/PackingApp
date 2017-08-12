@@ -13,7 +13,6 @@ import bin.wannes.packing.R;
 
 public class ActivityCalculation extends AppCompatActivity {
     Button buttonCalculate;
-    Button buttonCompleteView;
     FragCalculation fragmentCalculation;
 
     @Override
@@ -21,8 +20,6 @@ public class ActivityCalculation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculation);
         fragmentCalculation = (FragCalculation) getFragmentManager().findFragmentById(R.id.FragmentCalculation);
-
-        //new TaskCalculateServer().execute(fragmentCalculation.getFiel());
 
         initialize();
         initializeOnClickListeners();

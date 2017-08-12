@@ -11,7 +11,7 @@ import bin.wannes.packing.Tasks.TaskCalculateServer;
 
 public class ActivityViewResults extends AppCompatActivity {
     TextView labelResult;
-
+    FragResultBoxList fragResultBoxList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +37,10 @@ public class ActivityViewResults extends AppCompatActivity {
         columnHeight = extras.getInt("columnHeight");
         columnAmount = extras.getInt("columnAmount");
         columnPockets = extras.getInt("columnPockets");
-
-        new TaskCalculateServer(labelResult, (FragResultBoxList)
-                getFragmentManager().findFragmentById(R.id.FragmentResultBoxList)).execute(
+        fragResultBoxList = (FragResultBoxList)
+                getFragmentManager().findFragmentById(R.id.FragmentResultBoxList);
+        fragResultBoxList.setArguments(getIntent().getExtras());
+        new TaskCalculateServer(labelResult, fragResultBoxList).execute(
                 box1Length, box1Width, box1Height,
                 box2Length, box2Width, box2Height,
                 columnLength, columnWidth, columnHeight, columnAmount, columnPockets);
