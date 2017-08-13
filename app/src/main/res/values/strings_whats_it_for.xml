@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="button_got_it">Got it!</string>
-    <string name="label_1_whats_it_for">bla bla still have to write a lot....</string>
+    <string name="label_1_whats_it_for">This app is a front-end on the REST service that puts columns in boxes.</string>
+    <string name="label_2_whats_it_for">The columns are folded in such a way that 2 folded columns, become one cube. This cube is referred to as "a pair". (see image below)</string>
+    <string name="label_3_whats_it_for">After you press the "Calculation" button, you\'ll be able to enter the dimensions and see how much boxes are necessary.</string>
 </resources>

@@ -48,7 +48,7 @@ public class CustomResultListAdapter extends ArrayAdapter<WrapperObjectBox> impl
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         WrapperObjectBox box = getItem(position);
-        final ViewHolder viewHolder;
+        ViewHolder viewHolder;
 
 
         viewHolder = new ViewHolder();
@@ -58,7 +58,6 @@ public class CustomResultListAdapter extends ArrayAdapter<WrapperObjectBox> impl
         viewHolder.labelBoxResultAmount = (TextView) convertView.findViewById(R.id.LabelBoxResultAmount);
         viewHolder.labelBoxResultColumnPairs = (TextView) convertView.findViewById(R.id.LabelBoxResultColumnPairs);
         viewHolder.labelBoxResultVolumeUtilisation = (TextView) convertView.findViewById(R.id.LabelBoxResultVolumeUtilisation);
-        convertView.setTag(viewHolder);
         viewHolder.labelBoxResultSize.setText("Box " + box.getBox().getLength() + " * " + box.getBox().getWidth() + " * " + box.getBox().getHeight());
         viewHolder.labelBoxResultAmount.setText("# of boxes: " + box.getAmount());
         viewHolder.labelBoxResultColumnPairs.setText(box.getBox().getAmountOfItems() + "Pairs / " + box.getBox().getAmountOfItems() * 2 + "columns");
@@ -69,6 +68,7 @@ public class CustomResultListAdapter extends ArrayAdapter<WrapperObjectBox> impl
         double volume = box.getBox().getVolume();
         double utilization = used / volume;
         viewHolder.labelBoxResultVolumeUtilisation.setText(Math.round(utilization * 100) + "% Utilized");
+        convertView.setTag(viewHolder);
         convertView.setOnClickListener(this);
         convertView.setTag(position);
         return convertView;

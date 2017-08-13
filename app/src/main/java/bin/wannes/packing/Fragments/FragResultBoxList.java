@@ -37,6 +37,7 @@ public class FragResultBoxList extends Fragment implements View.OnClickListener 
     BoxRequestDbHelper boxRequestDbHelper;
     EditText nameConfiguration;
     Dialog alertDialog;
+    Bundle bundle;
 
     @TargetApi(23)
     @Override
@@ -67,11 +68,10 @@ public class FragResultBoxList extends Fragment implements View.OnClickListener 
 
     }
 
-    @TargetApi(26)
     @Override
     public void onClick(View view) {
 
-        View dialogView = getLayoutInflater().inflate(R.layout.dialog_save_result, null);
+        View dialogView = getActivity().getLayoutInflater().inflate(R.layout.dialog_save_result, null);
         nameConfiguration = (EditText) dialogView.findViewById(R.id.EditTextNameResult);
         Button buttonSaveConfirm = dialogView.findViewById(R.id.ButtonSaveResultConfirm);
 
@@ -121,7 +121,7 @@ public class FragResultBoxList extends Fragment implements View.OnClickListener 
     }
 
     private void writeToDb(SQLiteDatabase writeDb) {
-        Bundle formData = FragResultBoxList.this.getArguments();
+        Bundle formData = this.bundle;
         String requestName = nameConfiguration.getText().toString();
 
         ContentValues values = new ContentValues();
@@ -143,6 +143,10 @@ public class FragResultBoxList extends Fragment implements View.OnClickListener 
         alertDialog.dismiss();
         FragResultBoxList.this.getActivity().finish();
         showToast("Result Saved!");
+    }
+
+    public void customBundleSaver(Bundle bundle) {
+        this.bundle = bundle;
     }
 
     private void showToast(String message) {

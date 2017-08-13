@@ -1,18 +1,47 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/LabelWhatsItFor"
-        android:text="@string/label_1_whats_it_for"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/ButtonGotIt"
-        android:text="@string/button_got_it"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/LabelWhatsItFor"/>
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/LabelWhatsItFor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_1_whats_it_for"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/LabelWhatsItFor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LabelWhatsItFor"
+            android:text="@string/label_2_whats_it_for"
+            android:layout_margin="10dp"/>
+
+        <ImageView
+            android:id="@+id/img_folding_procedure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/folding_procedure" />
+
+        <TextView
+            android:id="@+id/LabelWhatsItFor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_folding_procedure"
+            android:text="@string/label_3_whats_it_for"
+            android:layout_marginTop="-60dp"
+            android:layout_marginLeft="10dp"/>
+
+        <Button
+            android:id="@+id/ButtonGotIt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LabelWhatsItFor3"
+            android:text="@string/button_got_it" />
+    </RelativeLayout>
+</ScrollView>
