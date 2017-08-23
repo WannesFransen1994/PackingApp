@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,11 +34,10 @@ public class SavedConfigListAdapter extends ArrayAdapter<String>{
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = LayoutInflater.from(getContext());
         View rowView = inflater.inflate(R.layout.saved_config_row, parent, false);
         TextView rowText = (TextView) rowView.findViewById(R.id.LabelRowSavedConfig);
-        rowText.setText(dataSet.get(position));
+        rowText.setText(getItem(position));
 
         return rowView;
     }

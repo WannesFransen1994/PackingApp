@@ -48,11 +48,9 @@ public class CustomResultListAdapter extends ArrayAdapter<WrapperObjectBox> impl
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         WrapperObjectBox box = getItem(position);
-        ViewHolder viewHolder;
-
-
-        viewHolder = new ViewHolder();
+        ViewHolder viewHolder = new ViewHolder();
         LayoutInflater inflater = LayoutInflater.from(getContext());
+
         convertView = inflater.inflate(R.layout.result_row_item, parent, false);
         viewHolder.labelBoxResultSize = (TextView) convertView.findViewById(R.id.LabelBoxResultSize);
         viewHolder.labelBoxResultAmount = (TextView) convertView.findViewById(R.id.LabelBoxResultAmount);

@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:text="** Boxes necessary"
+        android:textColor="@android:color/darker_gray"
         android:layout_marginTop="5dp"/>
 
     <TextView
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/LabelBoxResultSize"
         android:text="Contains ** pairs"
+        android:textColor="@android:color/darker_gray"
         android:layout_marginBottom="5dp"/>
 
     <TextView
@@ -36,6 +38,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/LabelBoxResultSize"
         android:text="**% Filled"
+        android:textColor="@android:color/darker_gray"
         android:layout_marginBottom="5dp"/>
 
 </RelativeLayout>
